@@ -1,0 +1,108 @@
+﻿@page "/Metarials/Create"
+@using System.Net.Http.Headers;
+@inject HttpClient http
+@inject IToastService toastService
+<div class="row">
+    <div class="col-12">
+        <EditForm Model="@metarial" OnValidSubmit="SaveMetarial">
+            <h3>Create Metarial</h3>
+            <DataAnnotationsValidator />
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2 text-end" for="@metarial.MetarialName">Metarial name</label>
+                <div class="col-4">
+                    <InputText @bind-Value="metarial.MetarialName" class="form-control" />
+                    <ValidationMessage For="@(()=>metarial.MetarialName)" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2 text-end" for="@metarial.Price">Metarial price</label>
+                <div class="col-4">
+                    <InputNumber @bind-Value="metarial.Price" class="form-control" />
+                    <ValidationMessage For="@(()=>metarial.Price)" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2 text-end" for="@metarial.MetarialName">Picture</label>
+                <div class="col-4">
+                    <InputFile OnChange="@OnInputFileChange" class="form-control" />
+                    <input type="hidden" @bind="metarial.Picture" />
+                    <ValidationMessage For="@(()=>metarial.Picture)" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2 text-end" for="@metarial.IsAvailable">Available</label>
+                <div class="col-4">
+                    <InputCheckbox @bind-Value="metarial.IsAvailable" class="m-2" />
+
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+
+                <div class="col-4 offset-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+
+                </div>
+            </div>
+        </EditForm>
+    </div>
+    <div class="col-12">
+        <a href="/Products/List" class="btn btn-link">Back to list</a>
+    </div>
+</div>
+@code {
+    private MetarialDTO metarial = new();
+    IBrowserFile? selectedFile;
+    private void OnInputFileChange(InputFileChangeEventArgs e)
+    {
+        selectedFile = e.File;
+        metarial.Picture = e.File.Name;
+
+        //this.StateHasChanged();
+    }
+    private async Task SaveMetarial()
+    {
+        if (metarial is not null)
+        {
+
+
+            var saveImage = await UploadItAsysnc();
+            metarial.Picture = saveImage.StoredFileName;
+            var response = await http.PostAsJsonAsync("api/Metarials", metarial);
+            if (response.IsSuccessStatusCode)
+            {
+                toastService.ShowSuccess("Data saved successfully", "Success");
+                metarial = new();
+
+            }
+            else
+            {
+                toastService.ShowError("Failed to data.", "Error");
+            }
+
+
+        }
+    }
+    private async Task<ImageUploadResponse> UploadItAsysnc()
+    {
+        using (var ms = new MemoryStream())
+        {
+
+            if (selectedFile is not null)
+            {
+                var content = new MultipartFormDataContent();
+                var fileContent = new StreamContent(selectedFile.OpenReadStream(long.MaxValue));
+
+                fileContent.Headers.ContentType = new MediaTypeHeaderValue(selectedFile.ContentType);
+                content.Add(content: fileContent, name: "\"file\"", fileName: selectedFile.Name);
+                var response = await http.PostAsync("api/Metarials/Upload", content);
+                var r = await response.Content.ReadFromJsonAsync<ImageUploadResponse>();
+                return r == null ? new ImageUploadResponse() : r;
+            }
+            else
+            {
+                return new ImageUploadResponse();
+            }
+
+        }
+    }
+}

@@ -1,0 +1,65 @@
+﻿@page "/Clients/Delete/{id:int}"
+@inject HttpClient http
+@inject IToastService toastService
+<div class="row">
+    <div class="col-12">
+        @if (client is null)
+        {
+            <div>Loading....</div>
+        }
+        else
+        {
+            <EditForm Model="@client" OnValidSubmit="DeleteClients">
+                <h3>Delete Client</h3>
+                <DataAnnotationsValidator />
+                <div class="form-group row mb-1">
+                    <label class="col-form-label col-2 text-end" for="@client.ClientName">Client name</label>
+                    <div class="col-4">
+                        <InputText @bind-Value="client.ClientName" class="form-control" />
+                        <ValidationMessage For="@(()=>client.ClientName)" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <label class="col-form-label col-2 text-end" for="@client.Address">Address</label>
+                    <div class="col-4">
+                        <InputTextArea @bind-Value="client.Address" class="form-control" />
+                        <ValidationMessage For="@(()=>client.Address)" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <label class="col-form-label col-2 text-end" for="@client.Email">Email</label>
+                    <div class="col-4">
+                        <InputText @bind-Value="client.Email" class="form-control" />
+                        <ValidationMessage For="@(()=>client.Email)" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <div class="col-4 offset-2">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </EditForm>
+        }
+    </div>
+    <div class="col-12">
+        <a href="/Clients/List" class="btn btn-link">Back to list</a>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public int id { get; set; }
+    private Clients? client = default!;
+    protected override async Task OnInitializedAsync()
+    {
+        client = await http.GetFromJsonAsync<Clients>($"api/Clients/{id}");
+    }
+    private async Task DeleteClients()
+    {
+        var respose = await http.DeleteAsync($"api/Clients/{id}");
+        if (respose.IsSuccessStatusCode)
+        {
+            toastService.ShowSuccess("Data deleted successsfully", "Success");
+            
+        }
+    }
+}

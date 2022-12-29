@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\nuzat\\Desktop\\18-12-2022\\Metarials_Blazor_1268507\\Metarials_BlazorApp\\Server\\wwwroot\\Uploads\\k3mqm0xo.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\k3mqm0xo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nuzat\\Desktop\\18-12-2022\\Metarials_Blazor_1268507\\Metarials_BlazorApp\\Server\\wwwroot\\Uploads\\lwucgbw0.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\lwucgbw0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nuzat\\Desktop\\18-12-2022\\Metarials_Blazor_1268507\\Metarials_BlazorApp\\Server\\wwwroot\\Uploads\\vjrgs1dh.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\vjrgs1dh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nuzat\\Desktop\\18-12-2022\\Metarials_Blazor_1268507\\Metarials_BlazorApp\\Server\\wwwroot\\Uploads\\xm3cibto.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\xm3cibto.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Metarials_BlazorApp.Server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Metarials_BlazorApp.Server.props",
+      "PackagePath": "build\\Metarials_BlazorApp.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Metarials_BlazorApp.Server.props",
+      "PackagePath": "buildMultiTargeting\\Metarials_BlazorApp.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Metarials_BlazorApp.Server.props",
+      "PackagePath": "buildTransitive\\Metarials_BlazorApp.Server.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

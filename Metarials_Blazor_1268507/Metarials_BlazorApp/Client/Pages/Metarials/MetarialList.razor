@@ -1,0 +1,65 @@
+﻿@page "/Metarials/List"
+@inject HttpClient http
+@inject IToastService toastService
+<div class="row">
+    <div class="col-12">
+        <h3>Metarial List</h3>
+        <div class="d-flex justify-content-end mb-1">
+            <a class="btn btn-primary btn-sm" href="/Metarials/Create">Create New</a>
+        </div>
+        @if (metarials is null)
+        {
+            <div>Loading...</div>
+        }
+        else
+        {
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Available?</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var p in metarials)
+                    {
+                        <tr>
+                            <td><img src="/Uploads/@p.Picture" class="rounded-circle" style="width:40px" /></td>
+                            <td>@p.MetarialName</td>
+                            <td>@p.Price.ToString("0.00")</td>
+                            <td>@(p.IsAvailable ? "Yes" : "No")</td>
+                            <td>
+                                <a class="btn btn-success btn-sm" href="/Metarilas/edit/@p.MetarialID"><i class="bi bi-pencil"></i></a>
+                                <button @onclick="@( ()=>Delete(p.MetarialID))" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+@code {
+    private Metarials[]? metarials;
+    protected override async Task OnInitializedAsync()
+    {
+        metarials = await http.GetFromJsonAsync<Metarials[]>("api/Metarials");
+    }
+    private async Task Delete(int id)
+    {
+        var response = await http.DeleteAsync($"api/Metarials/{id}");
+        if (response.IsSuccessStatusCode)
+        {
+            toastService.ShowSuccess("Data deleted successfully", "Success");
+            metarials = await http.GetFromJsonAsync<Metarials[]>("api/Metarials");
+        }
+        else
+        {
+            toastService.ShowError("Failed to delete data.", "Error");
+        }
+    }
+}

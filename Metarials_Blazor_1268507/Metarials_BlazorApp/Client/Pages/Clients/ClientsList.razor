@@ -1,0 +1,55 @@
+﻿@page "/Clients/List"
+@using Metarials_BlazorApp.Shared.DTO;
+<div class="row">
+    <div class="col-12">
+        <h3>Clients</h3>
+        <div class="d-flex justify-content-end mb-1">
+            <a href="/Clients/Create" class="btn btn-primary btn-sm">Create</a>
+        </div>
+        @if (client is null)
+        {
+            <div>Loading...</div>
+        }
+        else
+        {
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Client name</th>
+                        <th>Address</th>
+                        <th>E-mail</th>
+                        <th>...</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var c in client)
+                    {
+                        <tr>
+                            <td>@c.ClientName</td>
+                            <td>@c.Address</td>
+                            <td>@c.Email</td>
+                            <td>
+                                <a class="btn btn-success btn-sm" href="/Clients/edit/@c.ClientID"><i class="bi bi-pencil"></i></a>
+                                <a class="btn btn-danger btn-sm @getDisabledClass(c.CanDelete)" href="/Clients/delete/@c.ClientID"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+@inject HttpClient http
+@code {
+    private ClientsDTO[]? client;
+    protected override async Task OnInitializedAsync()
+    {
+        client = await this.http.GetFromJsonAsync<ClientsDTO[]>("api/Clients/DTO");
+    }
+    public string getDisabledClass(bool canDelete)
+    {
+        return canDelete ? "" : "disabled";
+    }
+
+}

@@ -1,0 +1,81 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = Metarials_BlazorApp.Client
+build_property.RootNamespace = Metarials_BlazorApp.Client
+build_property.ProjectDir = C:\Users\nuzat\Desktop\18-12-2022\Metarials_Blazor_1268507\Metarials_BlazorApp\Client\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\nuzat\Desktop\18-12-2022\Metarials_Blazor_1268507\Metarials_BlazorApp\Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Pages/Clients/ClientsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xDbGllbnRzTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Pages/Clients/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xDcmVhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Pages/Clients/Delete.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xEZWxldGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Pages/Clients/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xFZGl0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Pages/Metarials/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWV0YXJpYWxzXENyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Pages/Metarials/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWV0YXJpYWxzXEVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Pages/Metarials/MetarialList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWV0YXJpYWxzXE1ldGFyaWFsTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Pages/Orders/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXENyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Pages/Orders/Details.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXERldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Pages/Orders/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXEVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Pages/Orders/OrderList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXE9yZGVyTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nuzat/Desktop/18-12-2022/Metarials_Blazor_1268507/Metarials_BlazorApp/Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-6f7b0ir6ba
